@@ -5,6 +5,7 @@ import Navbar from "./components/navbar";
 import AddPenerimaanBarang from "./components/AddPenerimaanBarang";
 import AddPengeluaranBarang from "./components/AddPengeluaranBarang";
 import ViewStock from "./components/ViewStock";
+import Login from "./components/login";
 
 import PropTypes from 'prop-types';
 
@@ -120,6 +121,12 @@ function HomePage() {
           description="Kelola seluruh aset gudang dengan sistem pelaporan otomatis dan terperinci."
           path="/stock"
         />
+        <FeatureCard 
+          icon={<FaChartLine />}
+          title="Login"
+          description="Masuk ke sistem untuk mengelola dan memantau aktivitas gudang."
+          path="/login"
+        />
       </div>
       
       <div className="mt-5 p-4 bg-light rounded-3">
@@ -176,6 +183,14 @@ function App() {
           element={
             <Layout gradientColor="success">
               <ViewStock />
+            </Layout>
+          }
+        />
+        <Route
+          path="/login"
+          element={
+            <Layout gradientColor="primary">
+              <Login />
             </Layout>
           }
         />
